@@ -2,7 +2,7 @@ name: lifetime
 description: "一个精美的纪念日应用，记录生活中的重要时刻"
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -35,23 +35,30 @@ dependencies:
 
   # UI 组件
   cupertino_icons: ^1.0.8
-  
+
   # 状态管理
   provider: ^6.1.2
-  
+
   # 本地存储
   shared_preferences: ^2.3.3
   sqflite: ^2.4.1
   path_provider: ^2.1.5
   path: ^1.9.1
-  
+
   # 日期时间处理
   intl: ^0.20.2
-  
+
+  # 媒体选择和显示
+  image_picker: ^1.1.2
+  video_player: ^2.9.2
+
+  # 应用信息
+  package_info_plus: ^8.1.2
+
   # UI 增强
   flutter_slidable: ^3.1.1
   google_fonts: ^6.2.1
-  
+
   # 通知
   flutter_local_notifications: ^18.0.1
 
@@ -71,7 +78,6 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.

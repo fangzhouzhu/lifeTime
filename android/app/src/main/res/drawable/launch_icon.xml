@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+    
+    <!-- 白色圆角背景 -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M30,0 L90,0 Q120,0 120,30 L120,90 Q120,120 90,120 L30,120 Q0,120 0,90 L0,30 Q0,0 30,0 Z" />
+    
+    <!-- 粉色心形图标 -->
+    <path
+        android:fillColor="#E91E63"
+        android:pathData="M60,85 C40,70 25,55 25,40 Q25,25 37.5,25 Q45,25 50,32.5 Q55,40 60,45 Q65,40 70,32.5 Q75,25 82.5,25 Q95,25 95,40 C95,55 80,70 60,85 Z" />
+</vector>

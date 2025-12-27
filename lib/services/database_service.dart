@@ -21,8 +21,9 @@ class DatabaseService {
 
     return await openDatabase(
       path,
-      version: 1,
+      version: 2, // 升级版本号以支持新字段
       onCreate: _createDB,
+      onUpgrade: _upgradeDB,
     );
   }
 
@@ -37,9 +38,19 @@ class DatabaseService {
         iconName TEXT,
         color INTEGER,
         isLunar INTEGER NOT NULL DEFAULT 0,
-        reminder INTEGER NOT NULL DEFAULT 1
+        reminder INTEGER NOT NULL DEFAULT 1,
+        mediaPath TEXT,
+        mediaType TEXT
       )
     ''');
+  }
+
+  Future<void> _upgradeDB(Database db, int oldVersion, int newVersion) async {
+    if (oldVersion < 2) {
+      // 添加媒体字段
+      await db.execute('ALTER TABLE anniversaries ADD COLUMN mediaPath TEXT');
+      await db.execute('ALTER TABLE anniversaries ADD COLUMN mediaType TEXT');
+    }
   }
 
   /// 创建纪念日
@@ -86,11 +97,7 @@ class DatabaseService {
   /// 删除纪念日
   Future<int> deleteAnniversary(int id) async {
     final db = await database;
-    return await db.delete(
-      'anniversaries',
-      where: 'id = ?',
-      whereArgs: [id],
-    );
+    return await db.delete('anniversaries', where: 'id = ?', whereArgs: [id]);
   }
 
   /// 按分类读取

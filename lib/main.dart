@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 import 'providers/anniversary_provider.dart';
-import 'pages/home_page.dart';
+import 'pages/splash_page.dart';
 import 'theme/app_theme.dart';
 
 void main() {
@@ -28,14 +28,10 @@ class MyApp extends StatelessWidget {
           GlobalWidgetsLocalizations.delegate,
           GlobalCupertinoLocalizations.delegate,
         ],
-        supportedLocales: const [
-          Locale('zh', 'CN'),
-          Locale('en', 'US'),
-        ],
+        supportedLocales: const [Locale('zh', 'CN'), Locale('en', 'US')],
         locale: const Locale('zh', 'CN'),
-        home: const HomePage(),
+        home: const SplashPage(),
       ),
     );
   }
 }
-
